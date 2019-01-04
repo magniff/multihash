@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-
 """Multihash drop-in replacement for hashlib.
 """
 import struct
 from enum import Enum
 import hashlib
-import sha3
 
 
 class Known_Hashes(Enum):

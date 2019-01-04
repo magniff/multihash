@@ -1,11 +1,21 @@
-#!/usr/bin/env python3
+import time
+import setuptools
 
-from distutils.core import setup
 
-setup(name='multihash',
-      version='1.0',
-      description='multihash usable as a drop in of hashlib.',
-      author='Julien Palard',
-      author_email='julien@palard.fr',
-      url='https://github.com/julienpalard/multihash/',
-      py_modules=['multihash'])
+BUILD_NUMBER = str(int(time.time()))
+
+
+setuptools.setup(
+    name='cadena_multihash',
+    version="0.1.%s" % BUILD_NUMBER,
+    description="IPFS compatible multihash implementation",
+    author="Julien Palard, Aleksandr Koshkin",
+    url="https://github.com/magniff/multihash/",
+    install_requires=[
+        "pysha3", "pyblake2"
+    ],
+    modules=[
+        "multihash"
+    ],
+)
+

@@ -1,0 +1,26 @@
+language: python
+
+
+os:
+- linux
+
+
+python:
+- 3.5
+- 3.6
+- pypy3
+
+
+install:
+- pip install pytest
+- pip install codecov
+- pip install pytest-cov
+- python setup.py develop
+
+
+script: py.test --cov=./multihash.py tests/
+
+
+after_success:
+- codecov
+
